@@ -30,3 +30,9 @@ button { font: inherit; font-weight: 600; padding: 12px 16px; border: 0; border-
 .msg { font-size: 14px; }
 .msg.ok { color: var(--ok); } .msg.err { color: var(--err); }
 .tag { font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+.cabecera { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.idiomas { display: flex; gap: 4px; }
+.idioma { padding: 4px 10px; font-size: 12px; border-radius: 999px; background: transparent; color: var(--muted); border: 1px solid var(--line); }
+.idioma[aria-pressed="true"] { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
+.check { display: flex; gap: 8px; align-items: center; font-weight: 400; font-size: 14px; }
+.check input { width: auto; }

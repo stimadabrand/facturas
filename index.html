@@ -13,43 +13,47 @@
 </head>
 <body>
 <main>
-  <div>
+  <div class="cabecera">
     <p class="tag">Stimada · Finanzas</p>
-    <h1>Tu factura para Stimada</h1>
-    <p class="muted">Rellena tus datos y descarga la factura en PDF. Después respóndenos al correo con el PDF adjunto.</p>
+    <div class="idiomas" role="group" aria-label="Idioma / Language">
+      <button type="button" class="idioma" data-lang="es">ES</button>
+      <button type="button" class="idioma" data-lang="en">EN</button>
+    </div>
+  </div>
+  <div>
+    <h1 data-t="titulo"></h1>
+    <p class="muted" data-t="intro"></p>
   </div>
 
-  <p class="msg err" id="sinDatos" hidden>Este enlace no es válido. Usa el enlace que te enviamos por correo.</p>
+  <p class="msg err" id="sinDatos" data-t="sinDatos" hidden></p>
 
   <section class="card" id="resumen" hidden>
-    <h2>Lo que vas a facturar</h2>
+    <h2 data-t="resumen"></h2>
     <table id="tabla"></table>
   </section>
 
   <form class="card" id="form" hidden novalidate>
-    <h2>Tus datos</h2>
+    <h2 data-t="tusDatos"></h2>
     <div class="grid">
-      <label class="wide">Nombre y apellidos (o razón social)<input type="text" id="nombre" autocomplete="name"></label>
-      <label>NIF / DNI / NIE (o número fiscal de tu país)<input type="text" id="nif"></label>
-      <label>Email<input type="email" id="email" autocomplete="email"></label>
-      <label class="wide">Dirección completa<input type="text" id="direccion" placeholder="Calle, número, código postal, ciudad y país" autocomplete="street-address"></label>
-      <label>Nº de factura<input type="text" id="numero"></label>
-      <label>Fecha de la factura<input type="date" id="fecha"></label>
-      <label class="wide">Fecha del trabajo (solo si es distinta de la de la factura)<input type="text" id="fechaOp" placeholder="Por ejemplo: octubre 2026"></label>
-      <label class="wide">IBAN o datos para el pago<input type="text" id="pago"></label>
+      <label class="wide"><span data-t="nombre"></span><input type="text" id="nombre" autocomplete="name"></label>
+      <label><span data-t="nif"></span><input type="text" id="nif"></label>
+      <label><span data-t="email"></span><input type="email" id="email" autocomplete="email"></label>
+      <label class="wide"><span data-t="direccion"></span><input type="text" id="direccion" autocomplete="street-address"></label>
+      <label><span data-t="numero"></span><input type="text" id="numero"></label>
+      <label><span data-t="fecha"></span><input type="date" id="fecha"></label>
+      <label class="wide"><span data-t="pago"></span><input type="text" id="pago"></label>
     </div>
 
-    <h2>Impuestos</h2>
-    <p class="muted small">Pon los porcentajes que te correspondan. Si tienes dudas, consúltalo con tu gestor: cada caso es distinto.</p>
-    <div class="grid">
-      <label>IVA (%)<input type="text" id="iva" inputmode="decimal" placeholder="—"></label>
-      <label>Retención IRPF (%)<input type="text" id="ret" inputmode="decimal" placeholder="—"></label>
-      <label class="wide">Mención fiscal (obligatoria si el IVA es 0 %)<textarea id="mencion" rows="2" placeholder="Motivo por el que no aplicas IVA u otra mención que deba llevar tu factura"></textarea></label>
+    <label class="check"><input type="checkbox" id="otro"> <span data-t="otro"></span></label>
+    <div class="grid" id="impuestos" hidden>
+      <label><span data-t="iva"></span><input type="text" id="iva" inputmode="decimal"></label>
+      <label><span data-t="ret"></span><input type="text" id="ret" inputmode="decimal"></label>
+      <label class="wide"><span data-t="mencion"></span><textarea id="mencion" rows="2"></textarea></label>
     </div>
 
-    <button type="submit">Descargar mi factura en PDF</button>
+    <button type="submit" data-t="boton"></button>
     <p class="msg" id="msg" role="status"></p>
-    <p class="muted small">Tus datos no se guardan ni se envían a ningún sitio: el PDF se genera en tu navegador.</p>
+    <p class="muted small" data-t="privacidad"></p>
   </form>
 </main>
 <script src="vendor/pdf-lib.min.js"></script>
