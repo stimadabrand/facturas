@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Privacidad: la página no puede conectarse a ningún sitio ni enviar formularios. Todo pasa en el navegador. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<title>Factura para Stimada</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<main>
+  <div>
+    <p class="tag">Stimada · Finanzas</p>
+    <h1>Tu factura para Stimada</h1>
+    <p class="muted">Rellena tus datos y descarga la factura en PDF. Después respóndenos al correo con el PDF adjunto.</p>
+  </div>
+
+  <p class="msg err" id="sinDatos" hidden>Este enlace no es válido. Usa el enlace que te enviamos por correo.</p>
+
+  <section class="card" id="resumen" hidden>
+    <h2>Lo que vas a facturar</h2>
+    <table id="tabla"></table>
+  </section>
+
+  <form class="card" id="form" hidden novalidate>
+    <h2>Tus datos</h2>
+    <div class="grid">
+      <label class="wide">Nombre y apellidos (o razón social)<input type="text" id="nombre" autocomplete="name"></label>
+      <label>NIF / DNI / NIE (o número fiscal de tu país)<input type="text" id="nif"></label>
+      <label>Email<input type="email" id="email" autocomplete="email"></label>
+      <label class="wide">Dirección completa<input type="text" id="direccion" placeholder="Calle, número, código postal, ciudad y país" autocomplete="street-address"></label>
+      <label>Nº de factura<input type="text" id="numero"></label>
+      <label>Fecha de la factura<input type="date" id="fecha"></label>
+      <label class="wide">Fecha del trabajo (solo si es distinta de la de la factura)<input type="text" id="fechaOp" placeholder="Por ejemplo: octubre 2026"></label>
+      <label class="wide">IBAN o datos para el pago<input type="text" id="pago"></label>
+    </div>
+
+    <h2>Impuestos</h2>
+    <p class="muted small">Pon los porcentajes que te correspondan. Si tienes dudas, consúltalo con tu gestor: cada caso es distinto.</p>
+    <div class="grid">
+      <label>IVA (%)<input type="text" id="iva" inputmode="decimal" placeholder="—"></label>
+      <label>Retención IRPF (%)<input type="text" id="ret" inputmode="decimal" placeholder="—"></label>
+      <label class="wide">Mención fiscal (obligatoria si el IVA es 0 %)<textarea id="mencion" rows="2" placeholder="Motivo por el que no aplicas IVA u otra mención que deba llevar tu factura"></textarea></label>
+    </div>
+
+    <button type="submit">Descargar mi factura en PDF</button>
+    <p class="msg" id="msg" role="status"></p>
+    <p class="muted small">Tus datos no se guardan ni se envían a ningún sitio: el PDF se genera en tu navegador.</p>
+  </form>
+</main>
+<script src="vendor/pdf-lib.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
