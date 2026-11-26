@@ -36,7 +36,7 @@ const T = {
   },
   en: {
     titulo: "Your invoice for Stimada",
-    intro: "Fill in your details and download the invoice as a PDF. Then reply to our email with the PDF attached.",
+    intro: "Fill in your details and download the invoice as a PDF. Then send us an email to finance@stimada.com with the PDF attached.",
     sinDatos: "This link is not valid. Please use the link we sent you by email.",
     resumen: "What you are invoicing", tusDatos: "Your details",
     nombre: "Full name (or company name)", nif: "Tax ID or passport number, with your country code first (e.g. AU123456789)", email: "Email (optional)",
