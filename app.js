@@ -105,15 +105,16 @@ function totales() {
 }
 
 function pintarTabla() {
-  const t = $("tabla"), tx = T[lang];
-  t.textContent = "";
-  const fila = (a, b, cls) => { const tr = t.insertRow(); if (cls) tr.className = cls; tr.insertCell().textContent = a; tr.insertCell().textContent = b; };
-  lineas.forEach(l => fila(l.marca, eur(l.importe), "marca"));
+  const t = $("tabla"), r = $("totales"), tx = T[lang];
+  t.textContent = ""; r.textContent = "";
+  const fila = (tabla, a, b, cls) => { const tr = tabla.insertRow(); if (cls) tr.className = cls; tr.insertCell().textContent = a; tr.insertCell().textContent = b; };
+  // Arriba, las marcas; abajo, en el bloque negro, base, impuestos y total.
+  lineas.forEach(l => fila(t, l.marca, eur(l.importe)));
   const x = totales();
-  fila(tx.base, eur(x.base), "sep");
-  fila(tx.ivaL + (Number.isFinite(x.iva) ? " " + pct(x.iva) : ""), x.cIva === null ? "—" : eur(x.cIva));
-  if (x.cRet === null || x.cRet > 0) fila(tx.retL + (Number.isFinite(x.ret) ? " " + pct(x.ret) : ""), x.cRet === null ? "—" : "-" + eur(x.cRet));
-  fila(tx.total, x.total === null ? "—" : eur(x.total), "total");
+  fila(r, tx.base, eur(x.base));
+  fila(r, tx.ivaL + (Number.isFinite(x.iva) ? " " + pct(x.iva) : ""), x.cIva === null ? "—" : eur(x.cIva));
+  if (x.cRet === null || x.cRet > 0) fila(r, tx.retL + (Number.isFinite(x.ret) ? " " + pct(x.ret) : ""), x.cRet === null ? "—" : "-" + eur(x.cRet));
+  fila(r, tx.total, x.total === null ? "—" : eur(x.total), "total");
 }
 
 function ponerIdioma(l) {
