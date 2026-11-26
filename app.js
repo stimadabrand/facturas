@@ -8,7 +8,7 @@ const STIMADA = { nombre: "Stimada Brand SL", nif: "B75764324", dir: ["C/ María
 // Impuestos por defecto. Si la situación de la creadora es otra, marca la casilla y los cambia.
 const DEFECTO = {
   es: { iva: 21, ret: 0, mencion: "" },
-  en: { iva: 0, ret: 0, mencion: "Reverse charge: VAT to be accounted for by the recipient." }
+  en: { iva: 0, ret: 24, mencion: "No Spanish VAT (reverse charge). Spanish non-resident income tax (IRNR) withheld by Stimada." }
 };
 
 const T = {
@@ -39,22 +39,22 @@ const T = {
     intro: "Fill in your details and download the invoice as a PDF. Then reply to our email with the PDF attached.",
     sinDatos: "This link is not valid. Please use the link we sent you by email.",
     resumen: "What you are invoicing", tusDatos: "Your details",
-    nombre: "Full name (or company name)", nif: "Tax ID / VAT number, with your country code first (e.g. PT123456789)", email: "Email (optional)",
+    nombre: "Full name (or company name)", nif: "Tax ID or passport number, with your country code first (e.g. AU123456789)", email: "Email (optional)",
     direccion: "Full address (street, number, postcode, city and country)", numero: "Invoice number", fecha: "Date",
-    pago: "Bank details for the transfer (IBAN / SWIFT)",
-    otro: "My situation is different (I charge VAT, withholding applies…)",
-    iva: "VAT (%)", ret: "Withholding tax (%)", mencion: "Tax note (required if VAT is 0 %)",
+    pago: "Bank details: account holder, IBAN or account number, bank name and SWIFT/BIC",
+    otro: "My situation is different (EU resident, tax residence certificate, I charge VAT…)",
+    iva: "VAT (%)", ret: "Spanish non-resident tax withheld (%)", mencion: "Tax note (required if VAT is 0 %)",
     boton: "Download my invoice as PDF",
-    privacidad: "Your details are not stored or sent anywhere: the PDF is created in your browser.",
-    base: "Subtotal", ivaL: "VAT", retL: "Withholding tax", total: "Total due",
+    privacidad: "As you are not resident in Spain, Spanish law requires us to withhold 24% non-resident tax. If you send us a certificate of tax residence from your country's tax authority, we may be able to pay you the full amount. Your details are not stored or sent anywhere: the PDF is created in your browser.",
+    base: "Subtotal", ivaL: "VAT", retL: "Non-resident tax withheld", total: "Total due",
     errCampos: "Please fill in all fields (email is optional).",
     errPct: "VAT and withholding must be a number between 0 and 100 (enter 0 if not applicable).",
     errMencion: "If you charge no VAT, please explain why in the tax note.",
     generando: "Creating…", ok: "Invoice downloaded. Now reply to our email with the PDF attached.",
     errPdf: "The invoice could not be created. Please try again.",
     pdf: { factura: "INVOICE", num: "No.", fecha: "Date", emisor: "From", dest: "Bill to", nif: "Tax ID",
-      concepto: "Description", importe: "Amount", servicio: "Content creation services",
-      base: "Subtotal", iva: "VAT", ret: "Withholding tax", total: "TOTAL", pago: "Payment: bank transfer to", archivo: "Invoice" }
+      concepto: "Description", importe: "Amount", servicio: "Content creation services for Stimada",
+      base: "Subtotal", iva: "VAT", ret: "Non-resident tax withheld (IRNR)", total: "TOTAL", pago: "Payment: bank transfer to", archivo: "Invoice" }
   }
 };
 
