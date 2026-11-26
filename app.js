@@ -39,7 +39,7 @@ const T = {
     intro: "Fill in your details and download the invoice as a PDF. Then reply to our email with the PDF attached.",
     sinDatos: "This link is not valid. Please use the link we sent you by email.",
     resumen: "What you are invoicing", tusDatos: "Your details",
-    nombre: "Full name (or company name)", nif: "Tax ID / VAT number", email: "Email (optional)",
+    nombre: "Full name (or company name)", nif: "Tax ID / VAT number, with your country code first (e.g. PT123456789)", email: "Email (optional)",
     direccion: "Full address (street, number, postcode, city and country)", numero: "Invoice number", fecha: "Date",
     pago: "Bank details for the transfer (IBAN / SWIFT)",
     otro: "My situation is different (I charge VAT, withholding applies…)",
@@ -225,6 +225,7 @@ $("form").addEventListener("submit", async ev => {
   const error = t => { msg.className = "msg err"; msg.textContent = t; };
   const v = {};
   ["nombre", "nif", "email", "direccion", "numero", "fecha", "pago"].forEach(id => v[id] = $(id).value.trim());
+  v.nif = v.nif.replace(/[\s.\-]/g, "").toUpperCase();
   if (["nombre", "nif", "direccion", "numero", "fecha", "pago"].some(id => !v[id])) return error(tx.errCampos);
   const x = totales();
   if (!Number.isFinite(x.iva) || !Number.isFinite(x.ret)) return error(tx.errPct);
