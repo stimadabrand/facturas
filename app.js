@@ -14,7 +14,7 @@ const DEFECTO = {
 const T = {
   es: {
     titulo: "Tu factura para Stimada",
-    intro: "Rellena tus datos y descarga la factura en PDF. Después respóndenos al correo con el PDF adjunto.",
+    intro: "Rellena tus datos y descarga la factura en PDF. Después envíanos un mail a finance@stimada.com con el PDF adjunto.",
     sinDatos: "Este enlace no es válido. Usa el enlace que te enviamos por correo.",
     resumen: "Lo que vas a facturar", tusDatos: "Tus datos",
     nombre: "Nombre y apellidos (o razón social)", nif: "NIF / DNI / NIE", email: "Email (opcional)",
