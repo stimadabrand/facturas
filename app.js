@@ -14,7 +14,7 @@ const DEFECTO = {
 const T = {
   es: {
     titulo: "Tu factura para Stimada",
-    intro: "Rellena tus datos y descarga la factura en PDF. Después envíanos un mail a finance@stimada.com con el PDF adjunto.",
+    introA: "Rellena tus datos y descarga la factura en PDF. Después envíanos un mail a ", introB: " con el PDF adjunto.",
     sinDatos: "Este enlace no es válido. Usa el enlace que te enviamos por correo.",
     resumen: "Lo que vas a facturar", tusDatos: "Tus datos",
     nombre: "Nombre y apellidos (o razón social)", nif: "NIF / DNI / NIE", email: "Email (opcional)",
@@ -28,7 +28,7 @@ const T = {
     errCampos: "Rellena todos los campos (el email es opcional).",
     errPct: "El IVA y la retención tienen que ser un número entre 0 y 100 (pon 0 si no aplicas alguno).",
     errMencion: "Si no aplicas IVA, escribe el motivo en la mención fiscal.",
-    generando: "Generando…", ok: "Factura descargada. Ahora respóndenos al correo con el PDF adjunto.",
+    generando: "Generando…", ok: "Factura descargada. Ahora envíala a finance@stimada.com.",
     errPdf: "No se ha podido generar la factura. Inténtalo otra vez.",
     pdf: { factura: "FACTURA", num: "Nº", fecha: "Fecha", emisor: "Emisor", dest: "Destinatario", nif: "NIF",
       concepto: "Concepto", importe: "Importe", servicio: "Servicio de creación de contenido",
@@ -36,7 +36,7 @@ const T = {
   },
   en: {
     titulo: "Your invoice for Stimada",
-    intro: "Fill in your details and download the invoice as a PDF. Then send us an email to finance@stimada.com with the PDF attached.",
+    introA: "Fill in your details and download the invoice as a PDF. Then send us an email at ", introB: " with the PDF attached.",
     sinDatos: "This link is not valid. Please use the link we sent you by email.",
     resumen: "What you are invoicing", tusDatos: "Your details",
     nombre: "Full name (or company name)", nif: "Tax ID or passport number, with your country code first (e.g. AU123456789)", email: "Email (optional)",
@@ -50,7 +50,7 @@ const T = {
     errCampos: "Please fill in all fields (email is optional).",
     errPct: "VAT and withholding must be a number between 0 and 100 (enter 0 if not applicable).",
     errMencion: "If you charge no VAT, please explain why in the tax note.",
-    generando: "Creating…", ok: "Invoice downloaded. Now reply to our email with the PDF attached.",
+    generando: "Creating…", ok: "Invoice downloaded. Now send it to finance@stimada.com.",
     errPdf: "The invoice could not be created. Please try again.",
     pdf: { factura: "INVOICE", num: "No.", fecha: "Date", emisor: "From", dest: "Bill to", nif: "Tax ID",
       concepto: "Description", importe: "Amount", servicio: "Content creation services for Stimada",
